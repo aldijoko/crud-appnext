@@ -114,7 +114,7 @@ const HomeTable = () => {
               <ModalBody>
                 <Box px={5} py={5}>
                   <form onSubmit={handleSubmit(onSubmit)}>
-                    <FormControl isInvalid={errors.userId}>
+                    <FormControl isInvalid={Boolean(errors.userId)}>
                       <FormLabel htmlFor="userid">User ID</FormLabel>
                       <Input
                         type="number"
@@ -129,11 +129,11 @@ const HomeTable = () => {
                         })}
                       />
                       <FormErrorMessage>
-                        {errors.userId && errors.userId.message}
+                        {errors.userId && errors.userId.message?.toString()}
                       </FormErrorMessage>
                     </FormControl>
 
-                    <FormControl isInvalid={errors.title}>
+                    <FormControl isInvalid={Boolean(errors.title)}>
                       <FormLabel htmlFor="title">Title</FormLabel>
                       <Input
                         id="title"
@@ -147,11 +147,11 @@ const HomeTable = () => {
                         })}
                       />
                       <FormErrorMessage>
-                        {errors.title && errors.title.message}
+                        {errors.title && errors.title.message?.toString()}
                       </FormErrorMessage>
                     </FormControl>
 
-                    <FormControl isInvalid={errors.body}>
+                    <FormControl isInvalid={Boolean(errors.body)}>
                       <FormLabel htmlFor="body">Body</FormLabel>
                       <Input
                         id="body"
@@ -165,7 +165,7 @@ const HomeTable = () => {
                         })}
                       />
                       <FormErrorMessage>
-                        {errors.body && errors.body.message}
+                        {errors.body && errors.body.message?.toString()}
                       </FormErrorMessage>
                     </FormControl>
                     <Button
@@ -196,7 +196,7 @@ const HomeTable = () => {
             <ModalBody>
               <Box px={5} py={5}>
                 <form onSubmit={handleSubmit(updatePost)}>
-                  <FormControl isInvalid={errors.userId}>
+                  <FormControl isInvalid={Boolean(errors.userId)}>
                     <FormLabel htmlFor="userid">User ID</FormLabel>
                     <Input
                       type="number"
@@ -211,11 +211,11 @@ const HomeTable = () => {
                       })}
                     />
                     <FormErrorMessage>
-                      {errors.userId && errors.userId.message}
+                      {errors.userId && errors.userId.message?.toString()}
                     </FormErrorMessage>
                   </FormControl>
 
-                  <FormControl isInvalid={errors.title}>
+                  <FormControl isInvalid={Boolean(errors.title)}>
                     <FormLabel htmlFor="title">Title</FormLabel>
                     <Input
                       id="title"
@@ -229,11 +229,11 @@ const HomeTable = () => {
                       })}
                     />
                     <FormErrorMessage>
-                      {errors.title && errors.title.message}
+                      {errors.title && errors.title.message?.toString()}
                     </FormErrorMessage>
                   </FormControl>
 
-                  <FormControl isInvalid={errors.body}>
+                  <FormControl isInvalid={Boolean(errors.body)}>
                     <FormLabel htmlFor="body">Body</FormLabel>
                     <Input
                       id="body"
@@ -247,7 +247,7 @@ const HomeTable = () => {
                       })}
                     />
                     <FormErrorMessage>
-                      {errors.body && errors.body.message}
+                      {errors.body && errors.body.message?.toString()}
                     </FormErrorMessage>
                   </FormControl>
                   <Button
