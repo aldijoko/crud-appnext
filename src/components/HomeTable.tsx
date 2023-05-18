@@ -76,14 +76,9 @@ const HomeTable = () => {
 
   const updatePost = async () => {
     const { data } = await axios.put(
-      `https://jsonplaceholder.typicode.com/posts/${post.id}}`,
-      {
-        title: post.title,
-        body: post.body,
-        userId: post.userId,
-      }
+      `https://jsonplaceholder.typicode.com/posts/1}`
     );
-    setPostData(data);
+    // setPostData(data);
 
     toast({
       title: "Update Data",
