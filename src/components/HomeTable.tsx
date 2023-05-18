@@ -27,7 +27,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 const HomeTable = () => {
-  const [postData, setPostData] = useState([]);
+  const [postData, setPostData] = useState<any[]>([]);
   const { isOpen: isAddData, onOpen: onAddData, onClose } = useDisclosure();
   const {
     isOpen: isEditData,
