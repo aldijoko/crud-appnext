@@ -31,8 +31,8 @@ export default function Header() {
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
-        py={{ base: 2 }}
-        px={{ base: 4 }}
+        py={{ base: 3 }}
+        px={{ base: 10 }}
         borderBottom={1}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
@@ -267,41 +267,11 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: "Inspiration",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
+    label: "Home",
+    href: "/",
   },
   {
-    label: "Find Work",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Learn Design",
-    href: "#",
-  },
-  {
-    label: "Hire Designers",
-    href: "#",
+    label: "Post Detail",
+    href: "/detail",
   },
 ];

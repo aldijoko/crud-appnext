@@ -1,9 +1,10 @@
-import Header from "@/components/Header";
+import HomeTable from "@/components/HomeTable";
+import Sidebar from "@/components/Sidebar";
 
 export default function Home() {
   return (
     <>
-      <div>Home</div>
+      <Sidebar children={<HomeTable />} />
     </>
   );
 }
