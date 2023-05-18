@@ -19,7 +19,6 @@ import {
   ModalHeader,
   ModalFooter,
   ModalBody,
-  ModalCloseButton,
   useDisclosure,
 } from "@chakra-ui/react";
 import axios from "axios";
@@ -29,7 +28,6 @@ import { useForm } from "react-hook-form";
 
 const HomeTable = () => {
   const [postData, setPostData] = useState([]);
-  const [editData, setEditData] = useState(postData[0]);
   const { isOpen: isAddData, onOpen: onAddData, onClose } = useDisclosure();
   const {
     isOpen: isEditData,
@@ -70,7 +68,30 @@ const HomeTable = () => {
     onClose();
   };
 
-  const updatePost = async (values) => {};
+  interface Post {
+    title: string;
+    body: string;
+    userId: string;
+  }
+
+  const updatePost = async () => {
+    const { data } = await axios.put(
+      `https://jsonplaceholder.typicode.com/posts/${post.id}}`,
+      {
+        title: post.title,
+        body: post.body,
+        userId: post.userId,
+      }
+    );
+    setPostData(data);
+
+    toast({
+      title: "Update Data",
+      status: "success",
+      duration: 3000,
+      isClosable: true,
+    });
+  };
 
   const deletePost = async (post) => {
     await axios.delete(`https://jsonplaceholder.typicode.com/posts/${post.id}`);
@@ -185,7 +206,6 @@ const HomeTable = () => {
                     <Input
                       type="number"
                       id="userId"
-                      value={editData}
                       placeholder="User Id"
                       {...register("userId", {
                         required: "This is required",
@@ -204,7 +224,6 @@ const HomeTable = () => {
                     <FormLabel htmlFor="title">Title</FormLabel>
                     <Input
                       id="title"
-                      value={editData}
                       placeholder="Title"
                       {...register("title", {
                         required: "This is required",
